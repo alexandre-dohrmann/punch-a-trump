@@ -1,7 +1,101 @@
-.hole {
+
+.game-circle {
+	background-image: url("../images/black-circle.png");
+	background-size: cover;
 	display: inline-block;
 	height: 250px;
 	width: 250px;
-	font-family: 'Eater', cursive;
+}
+
+.game-board {
+	text-align: center;
+}
+
+.meter {
+	font-family: 'Frijole', cursive;
+	font-size: 20px;
+	color: red;
+}
+
+.meter-name {
+	font-family: 'Frijole', cursive;
+	font-size: 50px;
+	color: skyblue;
+}
+
+.meter-round, .meter-score {
+	font-family: 'Frijole', cursive;
+	font-size: 35px;
+	color: white;
+}
+
+.round-number, .time-left {
+	color: red;
+}
+
+.players-modules {
+	display: table;
+	width: 100%;
+	margin-bottom: 50px;
+}
+.game-background {
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+header.masthead {
+  margin-bottom: 0px;
+  background: no-repeat center center;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+
+}	
+
+@media only screen and (min-width: 768px) {
+  header.masthead {		
+    padding: 250px 0;
+  }
+}	
+
+.left-player-one {
+	width: 50%;
+	position: absolute;
+	left: 0px;
+	text-align: left;
+}
+
+.right-player-two {
+	width: 50%;
+	position: absolute;
+	right: 0px;
+	text-align: right;
+}
+button.begin {
+	font-family: 'Frijole', cursive;
+	font-size: 40px;
+	background-color: blue;
+	border-radius: 20px;
+	border: 2px solid black;
+	text-align: center;
+	color: white;
+	position: relative;
+	margin: 20px 0;
+}
+
+.button-row {
+	text-align: center;
+}
+
+.trump {
+	background-image: url("../images/trump1.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 250px;
+	width: 250px;
 
 }
+
