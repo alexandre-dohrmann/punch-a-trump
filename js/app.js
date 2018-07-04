@@ -6,15 +6,20 @@ $('document').ready(function() {
 
 let time = 30;
 let round = 1;
+let circleNumber = [];
+
 
 const setTimer = () => {
 	const timer = setInterval(() => {
-		time--;
-		if ((time === 0)) {
-			clearInterval(timer);
-			round++;
+	time--;
+	renderHeads();
+	$('.time-left').text(time + '\'s');
+	if ((time === 0)) {
+		clearInterval(timer);
+		round++;
+		$('.round-number').text(round);
+		$('.game-board').empty();
 		}
-	$('.time-left').text(time + 's');
 	}, 1000)
 }
 
@@ -24,26 +29,63 @@ const setUpRound = () => {
 	$('.round-number').text(round);
 	if(round === 1) {
 		time = 30;
-		console.log("This is round 1");
 	} else if (round === 2) {
 		time = 20;
-		console.log("this is round 2");
 	} else if (round === 3) {
-		console.log("tis is round 3");
 		time = 10;
 	}
 }
-	
-let gameBoard = [	[0,0,0],
-					[0,0,0],
-					[0,0,0],
-];
 
+function renderHeads() {
+	$('.trump').off();
+	let randNums = [];
+	while (randNums.length < 3) {
+		let randomNumber = Math.floor(Math.random() * 9) + 1;
+			if(randNums.includes(randomNumber) == false) {
+			randNums.push(randomNumber);
+			console.log(randNums);
+		}
+	}
+	for (let i = 0; i < randNums.length; i++) {
+		circleNumber = randNums[i];
+		$(`.game-circle-${circleNumber}`).addClass(trump.type);
+	}
+	$('.trump').on('click', (e) => {
+		$(e.currentTarget).removeClass('trump').addClass('game-circle').off();
+		checkValidTrump();		
+	});
+	removeHeads();
+};
+
+function removeHeads() {
+	console.log(circleNumber)
+	setTimeout(() => {
+		$(`.game-circle-${circleNumber}`).removeClass('trump').addClass('game-circle');
+	}, 750)
+}
+
+function checkValidTrump () {
+	if ($('.trump')) {
+		playerOne.score++;
+	} else {
+	}
+$('.score').text(playerOne.score)
+}
+
+// ===============================================
+// ===== GAMEBOARD:
+// ===============================================
+	
+let gameBoard = [	[1,2,3],
+					[4,5,6],
+					[7,8,9],
+];
 for(let i = 0; i < gameBoard.length; i++){
 	let row = gameBoard[i];
-	$('.game-board').append(`<div class='game-row-${i} game-row'></div>`)
+	$('.game-board').append(`<div class='game-row'></div>`)
 	for(let x = 0; x < row.length; x++){
-		$(`.game-row-${i}`).append(`<div class="game-circle game-circle-${x}-${i}"></div>`)
+		let circleNumber = row[x];
+		$('.game-board').append(`<div class='game-circle game-circle-${circleNumber}'></div>`)
 	}
 }
 
@@ -57,26 +99,15 @@ class Player {
 		this.score = 0;
 		this.roundsWon = 0;
 	}
-	checkTrumpHeadClick (trump) {
-		if (trump.renderHeads = true) {
-			this.score++;
-		} else {
-			this.score--;
-		}
-	$('.score').text(score)
-	}
 }
 
 class Heads {
 	constructor(type) {
 		this.type = type;
-		this.xCoordinate = 1;
-		this.yCoordinate = 1;	
 	}
-	renderHeads() {
-		$(`.game-circle-${this.xCoordinate}-1`).addClass(this.type);
-	}
+
 }
+
 // ===============================================
 // ===== Instantiate Players:
 // ===============================================
@@ -84,7 +115,6 @@ class Heads {
 let playerOne = new Player();
 let playerTwo = new Player();
 let trump = new Heads("trump");
-
 
 
 
@@ -103,7 +133,8 @@ $('body').on('click', '.begin', function() {
 	$('.begin').remove();
 	setTimer();
 	setUpRound();
-	trump.renderHeads();
+
+
 
 })
 
