@@ -12,35 +12,39 @@
 }
 
 .meter {
-	font-family: 'Frijole', cursive;
-	font-size: 20px;
-	color: red;
-}
-
-.meter-name {
-	font-family: 'Frijole', cursive;
+	font-family: 'Oswald', sans-serif;
 	font-size: 50px;
-	color: skyblue;
-}
-
-.meter-round, .meter-score {
-	font-family: 'Frijole', cursive;
-	font-size: 35px;
 	color: white;
 }
 
-.round-number, .time-left {
+.meter-name-p1, .meter-name-p2, .p1, .p2 {
+	font-family: 'Frijole', cursive;
+	font-size: 80px;
+	color: red;
+}
+
+.meter-round, .meter-score {
+	font-family: 'Oswald', sans-serif;
+	font-size: 50px;
+	color: white;
+}
+
+.round-number, .time-left-p1, .time-left-p2, .score-p1, .rounds-won-p1, .score-p2, .rounds-won-p2 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 50px;
 	color: red;
 }
 
 .players-modules {
 	display: table;
 	width: 100%;
-	margin-bottom: 50px;
+	margin-bottom: 200px;
+	margin-top: 0px;
 }
 .game-background {
 	background-repeat: no-repeat;
 	background-size: 100%;
+	text-align: center;
 }
 
 header.masthead {
@@ -74,8 +78,8 @@ header.masthead {
 	right: 0px;
 	text-align: right;
 }
-button.begin {
-	font-family: 'Frijole', cursive;
+button.begin, .next-player, .next-round, .refresh {
+	font-family: 'Boogaloo', cursive;
 	font-size: 40px;
 	background-color: blue;
 	border-radius: 20px;
@@ -83,7 +87,7 @@ button.begin {
 	text-align: center;
 	color: white;
 	position: relative;
-	margin: 20px 0;
+	margin: 50px 0;
 }
 
 .button-row {
@@ -98,4 +102,30 @@ button.begin {
 	width: 250px;
 
 }
+ body {
+ 	text-align: center;
+ 	cursor: url(../images/glove.png), auto;	
 
+ }
+
+h3 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 50px;
+	color: red;
+}
+
+.winner {
+	font-family: 'Frijole', cursive;
+	font-size: 80px;
+	color: blue;
+	padding: 50px;
+
+}
+
+.birds {
+	padding-bottom: 0px;
+}
+
+.dizzyTrump {
+	padding-top: : -100px;
+}

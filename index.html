@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Eater" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
+	<script>
+		var punch = new Audio();
+		punch.src = "punch.mp3";
+	</script>
 	<title>Punch-A-Trump</title>
 </head>
 <body>
@@ -14,39 +19,35 @@
 	<header class="masthead" style="background-image: url('images/header.png')">
 		<div class="players-modules">
 			<div class="left-player-one">
-					<div class="meter-name">Player One<span class="player"></span></div>
+					<div class="meter-name-p1">Player 1<span class="p1"></span></div>
 					<div class="meter-round">Round: <span class="round-number"></span></div>
-					<div class="meter-score">Time-Left: <span class="time-left"></span></div>
+					<div class="meter-score">Time-Left: <span class="time-left-p1"></span></div>
 					<br>
-					<div class="meter">Score: <span class="score"></span></div>
-					<div class="meter">Rounds Won: <span class="rounds-won"></span></div>
+					<div class="meter">Score: <span class="score-p1"></span></div>
+					<div class="meter">Rounds Won: <span class="rounds-won-p1"></span></div>
 			</div>
 			<div class="right-player-two">
-					<div class="meter-name">Player Two<span class="player"></span></div>
+					<div class="meter-name-p2">Player 2<span class="p2"></span></div>
 					<div class="meter-round">Round: <span class="round-number"></span></div>
-					<div class="meter-score">Time-Left: <span class="time-left"></span></div>
+					<div class="meter-score">Time-Left: <span class="time-left-p2"></span></div>
 					<br>
-					<div class="meter">Score: <span class="score"></span></div>
-					<div class="meter">Rounds Won: <span class="rounds-won"></span></div>
+					<div class="meter">Score: <span class="score-p2"></span></div>
+					<div class="meter">Rounds Won: <span class="rounds-won-p2"></span></div>
 			</div>
 		</div>
 	</header>
-<div class="button-row">
-<button class="begin">BEGIN!</button>
-</div>	
+	<div class="button-row">
+		<button class="begin" onclick="punch.play()">BEGIN!</button>
+		<h3>Have you ever just wanted to punch Trump right in the suckhole?</br>Well, here's your chance!</br>Click above and challege a friend to see who cares more for this country . . .</h3>
+	</div>	
 
-<div class="game-background" style="background-image: url('images/whitehouse.png')">
-	<div class="container">
-		<div class="game-board">
-	</div>
-</div>		
+	<div class="game-background" style="background-image: url('images/whitehouse.png')">
+		<div class="container" onclick="punch.play()">
+			<div class="game-board" onclick="punch.play()">
+			</div>
+		</div>
+	</div>		
 </div>
-
-
-
-
-
-
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js">	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -55,76 +56,3 @@
 	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-<!-- 	<div class="row">
-		<div class="col-lg-4 col-sm-6 text-center mb-4">
-		<div class="hole">
-	  		<img class="rounded-circle img-fluid d-block mx-auto" src="images/black-circle.png">
-	 	</div>
-	 	 	<h3>"Gyna"</h3>
-		</div>
-
-		<div class="col-lg-4 col-sm-6 text-center mb-4">
-		<div class="hole">
-	  		<img class="rounded-circle img-fluid d-block mx-auto" src="images/black-circle.png">
-		</div>
-			<h3>"Crooked Hillary"</h3>
-		</div>
-
-		<div class="col-lg-4 col-sm-6 text-center mb-4">
-		<div class="hole">
-	  		<img class="rounded-circle img-fluid d-block mx-auto" src="images/black-circle.png">
-		</div>
-			<h3>"Fake News"</h3>
-		</div>
-
-		<div class="col-lg-4 col-sm-6 text-center mb-4">
-		<div class="hole">
-	  	<img class="rounded-circle img-fluid d-block mx-auto" src="images/black-circle.png">
-	 	<h3>"MAGA"</h3>
-		</div>
-		</div>
-
-		<div class="col-lg-4 col-sm-6 text-center mb-4">
-		<div class="hole">
-	  	<img class="rounded-circle img-fluid d-block mx-auto" src="images/black-circle.png">
-	 	<h3>"Failing News Source"</h3>
-		</div>
-		</div>
-
-		<div class="col-lg-4 col-sm-6 text-center mb-4">
-		<div class="hole">
-	  	<img class="rounded-circle img-fluid d-block mx-auto" src="images/black-circle.png">
-	 	<h3>"Border Wall"</h3>
-		</div>
-		</div>
-
-		<div class="col-lg-4 col-sm-6 text-center mb-4">
-		<div class="hole">
-	  	<img class="rounded-circle img-fluid d-block mx-auto" src="images/black-circle.png">
-	 	<h3>"Believe Me"</h3>
-		</div>
-		</div>
-		
-		<div class="col-lg-4 col-sm-6 text-center mb-4">
-		<div class="hole">
-	  	<img class="rounded-circle img-fluid d-block mx-auto" src="images/black-circle.png">
-	 	<h3>"Yuge"</h3>
-		</div>
-		</div>
-
-		<div class="col-lg-4 col-sm-6 text-center mb-4">
-		<div class="hole">
-	  	<img class="rounded-circle img-fluid d-block mx-auto" src="images/black-circle.png">
-	 	<h3>"Winning"</h3>
-		</div>
-		</div>
-	</div> -->
